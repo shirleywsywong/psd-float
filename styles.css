@@ -24,26 +24,27 @@ a {
     text-decoration: none;
 }
 .wrapper {
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin: 0 auto;
 }
-h1, h2 {
+section {
+    padding-top: 35px;
+}
+h1, h2, h3 {
     color: #1d81cc;
     text-transform: uppercase;
 }
 h1 {
     font-size: 3.2rem;
-    padding-top: 7.5rem;
+    padding-top: 7rem;
     line-height: 2.9rem;
 }
-h2 {
+h2, h3 {
     text-align: center;
     font-size: 1.7rem;
     padding: 1.5rem 0;
     line-height: 1.8rem;
-}
-section {
-    padding: 35px 0;
 }
 .button {
     background-color: #042259;
@@ -53,7 +54,7 @@ section {
     padding: 1rem;
     margin: 2rem auto 0 auto;
     display: block;
-    width: 50%;
+    width: 40%;
     text-align: center;
 }
 
@@ -64,7 +65,7 @@ header, .bg-layer {
 }
 header {
     background: radial-gradient(at 60% 90%, #fff, #f5c8cf 60%);
-    padding-top: 15px;
+    padding-top: 20px;
 }
 .bg-layer {
     background-image: url(assets/header-group-appliances.png);
@@ -72,30 +73,32 @@ header {
     background-size: 70%;
     background-repeat: no-repeat;
 }
-header nav {
-    font-size: 1.2rem;
-    text-align: right;
-    width: 80%;
+.top-nav {
+    height: 100px;
+}
+.top-nav i.hamburger {
+    float: right;
+    font-size: 1.5rem;
+}
+.top-nav li {
+    float: left;
+    margin-bottom: 5px;
 }
 .main-menu a {
-    color: black;
-    padding: 5px; 
+    color: #1f2022;
+    padding: 5px;
+    text-transform: uppercase;
 }
 .social-menu a {
     color: #1d81cc;
     padding: 10px; 
+    display: block;
 }
-i.menu {
-    float: right;
-    font-size: 3rem;
-    text-align: right;
-}
-i.menu * {
+nav .menu{
     display: none;
 }
-i.menu:hover * {
+nav i.hamburger:hover + .menu{
     display: block;
-    float: left;
 }
 .tagline {
     text-transform: lowercase;
@@ -125,6 +128,7 @@ i.menu:hover * {
 /* Blog section */
 .blog {
     background-color: #fcdde2;
+    padding-bottom: 35px;
 }
 .blog-image {
     height: 200px;
@@ -158,13 +162,10 @@ i.menu:hover * {
 .contact {
     background-color: #f0f5ff;
     font-size: 1.1rem;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
 }
 form {
     margin: 15px;
-}
-form label {
-    display: none;
 }
 .form-email {
     width: 100%;
@@ -183,13 +184,13 @@ form label {
     width: 55%;
     float: left;
 }
-.address h2 {
+.address h3 {
     text-align: left;
     padding: 0.5rem 0;
 }
 .address a {
     font-family: 'Barlow', sans-serif;
-    color: black;
+    color: #1f2022;
 }
 .bottom-nav {
     width: 45%;
@@ -214,7 +215,10 @@ footer {
 /* Landscape phones */
 @media (min-width: 480px){
     header, .bg-layer {
-        height: 150vh;
+        height: 100vw;
+    }
+    h1 {
+        max-width: 50%;
     }
     .blog-image {
         height: 320px;
@@ -222,21 +226,279 @@ footer {
 }
 /* Landscape phone to portrait tablet */
 @media (min-width: 768px){
-    header, .bg-layer {
-        height: 80vh;
+    .wrapper {
+        padding-left: 30px;
+        padding-right: 30px
     }
-    header nav {
-        width: 100%;
+    h1 {
+        font-size: 5.23rem;
+        line-height: 4rem;
     }
-    i.menu {
+    h2,h3 {
+        padding: 1rem 0;
+    }
+    .button {
+        display: inline-block;
+        width: auto;
+        margin: 1.5rem 0 0 0;
+    }
+    p {
+        font-size: 0.85rem;
+        letter-spacing: 0.2px;
+        line-height: 1.5rem;
+    }
+    /* header section */
+    .tagline {
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+    nav .menu {
+        display: block;
+    }
+    .top-nav i.hamburger {
         display: none;
     }
-    i.menu * {
-    display: block;
+    .main-menu a {
+        font-weight: bold;
+    }
+    .main-menu,.social-menu {
+        float: right;
+    }
+    .social-menu {
+        margin-top: 50px;
+    }
+    .social-menu li {
+        float: none;
+        margin-top: 8px;
+    }
+    .main-menu {
+        margin-right: 30px;
+    }
+    .main-menu a {
+        padding: 15px;
+    }
+
+    /* About section */
+    .about {
+        padding-bottom: 35px;
+    }
+    .gallery li {
+        width: calc((100% - 40px) / 3);
+    }
+    .gallery li:last-child {
+        display: block;
+    }
+    .gallery li:nth-child(2) {
+        margin: 0 20px;
+    }
+    .feature-image {
+        width: 30%;
+        margin: 1.5rem 20px 0 0;
+    }
+    .feature-content {
+        width: calc(100% - 30% - 20px);
+    }
+    .feature-image, .feature-content {
+        float: left;
+    }
+    .feature-content h2 {
+        text-align: left;
+    }
+
+    /* Blog section */
+    .blog {
+        background-color: #f0f5ff;
+        padding: 0;
+    }
+    .blog h3 {
+        text-align: left;
+        padding: 0.7rem 0;
+    }
+    .blog1 .blog-image, .blog1 .blog-content {
+        width: 50%;
+        height: 35vw;
+        float: right;
+    }
+    .blog2 .blog-image, .blog2 .blog-content {
+        width: 50%;
+        height: 35vw;
+        float: left;
+    }
+    .blog2 {
+        margin: 0;
+    }
+    .blog .button {
+        margin: 0.4rem 0;
+        background-color: #fcdde2;
+        color: #042259;
+    }
+
+    /* CTA section */
+    .cta {
+        padding-bottom: 35px;
+    }
+    .cta-content {
+        margin: auto;
+        display: inline-block;
+    }
+    .cta-1, .cta-2, .cta-3 {
+        float: left;
+        margin: 0 30px;
+    }
+
+    /* contact section */
+    .email-subscription, .contact-info {
+        float: left;
+        width: 50%;
+    }
+    .email-subscription h3{
+        text-align: left;
+        padding: 0.5rem 0;
+    }
+    form {
+        margin: 15px 15px 15px 0;
+    }
+
 }
 /* Portrait tablet and small desktops */
-@media (min-width: 940px){}
+@media (min-width: 940px){
+    h1 {
+        font-size: 6.5rem;
+        line-height: 5.5rem;
+    }
+    h2,h3 {
+        font-size: 2.65rem;
+        line-height: 2.65rem;
+    }
+    p {
+        font-size: 1.25rem;
+        letter-spacing: 0.2px;
+        line-height: 1.8rem;
+    }
+    .wrapper {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    section {
+        padding-top: 50px;
+    }
+    /* header section */
+    header, .bg-layer {
+        height: 85vh;
+        width: auto;
+    }
+    header {
+        background: radial-gradient(at 70% 70%, #fff, #f5c8cf 60%);
+    }
+    .bg-layer {
+        background-size: 50%;
+    }
+    .tagline {
+        font-size: 2.5rem;
+    }
+    .social-menu {
+        margin-right: -30px;
+    }
+    .social-menu a {
+        font-size: 1.8rem;
+    }
+    /* about section */
+    .about {
+        padding-bottom: 50px;
+    }
+    .gallery {
+        padding: 50px 0;
+    }
+    .gallery li {
+        width: calc((100% - 100px) / 3);
+    }
+    .gallery li:nth-child(2) {
+        margin: 0 50px;
+    }
+    .gallery img {
+        width: 100%;
+    }
+    .feature-image {
+        width: 20%;
+        margin: 1.5rem 50px 0 0;
+    }
+    .feature-content {
+        width: calc(100% - 20% - 50px);
+    }
 
-/* h1 {
-    font-size: 5.23rem;
-} */
+    /* blog section */
+    .blog1 .blog-image, .blog1 .blog-content, .blog2 .blog-image, .blog2 .blog-content {
+        height: 40vw;
+    }
+    .blog-content {
+        padding: 15px 30px;
+    }
+    .blog-image img{
+        width: 100%;
+        height: 100%;
+    }
+    .blog .button {
+        margin: 1rem 0;
+    }
+
+    /* CTA section */
+    .cta {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .cta-1, .cta-2, .cta-3 {
+        margin: 0 50px;
+        font-size: 2rem;
+    }
+    /* contact section */
+    .contact h3 {
+        font-size: 1.56rem;
+        letter-spacing: 0.2px;
+        line-height: 1.8rem;
+    }
+}
+/* Large screen monitors */
+@media (min-width: 1400px){
+    .wrapper {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+    /* header section */
+    header {
+        background: radial-gradient(at 85% 60%, #fff, #f5c8cf 60%);
+    }
+    .bg-layer {
+        background-size: 42%;
+    }
+    .social-menu {
+        margin-right: -75px;
+    }
+    /* blog section */
+    .blog1 .blog-image, .blog1 .blog-content, .blog2 .blog-image, .blog2 .blog-content {
+        height: 30vw;
+    }
+    .blog-content {
+        padding: 50px 150px;
+    }
+    .blog-image img{
+        width: 100%;
+        height: auto;
+    }
+    .blog .button {
+        margin: 1.5rem 0;
+    }
+    .cta-1, .cta-2, .cta-3 {
+        margin: 0 120px;
+    }
+    form input {
+        float: left;
+    }
+    .form-email {
+        width: 60%;
+        padding: calc(1rem - 2px);
+    }
+    .form-submit {
+        width: 25%;
+        margin: 0;
+    }
+}
